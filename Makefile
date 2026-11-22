@@ -11,7 +11,7 @@ build:
 	$(CXX) -o $(BINARY_DIR)/$(TARGET) $(CXXFLAGS) $(SOURCES)
 
 run: build
-	./build/riscv-emulator
+	./build/riscv-emulator test.bin
 
 clean:
 	rm -rf build
