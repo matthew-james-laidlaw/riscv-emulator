@@ -1,5 +1,7 @@
 #include "binary.h"
 #include "cli.h"
+#include "memory.h"
+#include "proc.h"
 
 auto main(int argc, char** argv) -> int
 {
@@ -11,10 +13,12 @@ auto main(int argc, char** argv) -> int
     PrintFileNotFoundAndExit(argv[1]);
   }
 
-  auto filepath = fs::path(argv[1]);
-  auto binary = LoadBinary(filepath);
+  const auto filepath = fs::path(argv[1]);
+  const auto binary = LoadBinary(filepath);
 
   PrintBinary(binary);
+
+  auto proc = ProcessorRV32I(); 
 
   return 0;
 }

@@ -26,3 +26,9 @@ inline auto PrintBinaryEmptyAndExit(const char* filename) -> void
   std::exit(1);
 }
 
+inline auto PrintNotImplementedAndExit(const char* function_name) -> void
+{
+  std::println("error: function is not implemented '{}'", function_name);
+  std::exit(1);
+}
+
